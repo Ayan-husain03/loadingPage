@@ -1,0 +1,77 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+@font-face {
+    font-family: gristela;
+    src: url('./gristela.otf');
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  font-family: gristela;
+}
+.container {
+  background: #000;
+  color: #fff;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  font-size: 8rem;
+  font-weight: 800;
+}
+.loading-page {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: linear-gradient(90deg, #3a3a3d, #3f5d5d, #423232);
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+}
+#svg {
+  height: 150px;
+  width: 150px;
+  stroke: #fff;
+  fill-opacity: 0;
+  stroke-width: 5px;
+  stroke-dasharray: 4500;
+  animation: draw 5s ease infinite;
+}
+.logo-name {
+  color: #fff;
+  font-size: 2rem;
+  letter-spacing: 10px;
+  text-transform: uppercase;
+  margin-left: 10px;
+}
+.name-container {
+    height: 40px;
+    overflow: hidden;
+    font-weight: bold;
+}
+
+@keyframes draw {
+  0% {
+    stroke-dashoffset: 4500;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@media (max-width: 800px) {
+  .container {
+    font-size: 3rem;
+  }
+}
